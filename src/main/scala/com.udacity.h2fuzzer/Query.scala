@@ -1,4 +1,4 @@
-package fuzzer
+package com.udacity.h2fuzzer
 
 object Query {
   val CREATE_TEST_DB = """
@@ -21,7 +21,7 @@ object Query {
     VALUES (?, ?, ?, ?, ?)
   """
 
-  val SELECT_ALL = """
+  val SELECT_ALL_USERS = """
     SELECT * FROM user
   """
 }

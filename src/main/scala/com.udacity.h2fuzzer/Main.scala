@@ -1,7 +1,7 @@
-package fuzzer
+package com.udacity.h2fuzzer
 
 import java.io._
-import java.sql.{PreparedStatement, DriverManager, Statement, Connection}
+import java.sql.{DriverManager, Connection, Statement, PreparedStatement}
 
 import com.google.common.io.Files
 import org.apache.commons.io.FileUtils
@@ -30,22 +30,22 @@ object Main {
     Range(0,10000).foreach((i) => {
       restoreDatabase(dbs)
       mutate(dbFile)
-      executeQuery(dbUri, Query.SELECT_ALL)
+      executeQuery(dbUri, Query.SELECT_ALL_USERS)
     })
 
     println("Done!")
   }
 
   def mutate(fileName: String) = {
-    // println("Mutating db...")
+    println("Mutating db...")
 
     val file = new File(fileName)
 
     val headerSize = 16 * 1024
 
     val bytes = Files.toByteArray(file)
-    val ins = rand.nextInt(bytes.length / 100)
-    val del = rand.nextInt(bytes.length / 100)
+    // val ins = rand.nextInt(bytes.length / 100)
+    // val del = rand.nextInt(bytes.length / 100)
     val mut = rand.nextInt(bytes.length)
     Range(0, mut).foreach((i) => {
       val ix = headerSize + rand.nextInt(bytes.length - headerSize)
@@ -73,7 +73,7 @@ object Main {
   }
 
   def createDatabase(path: String) = {
-    println("Creating reference db...")
+    // println("Creating reference db...")
 
     var conn: Connection = null
     var stmt: Statement = null
@@ -101,7 +101,7 @@ object Main {
   }
 
   def saveDatabase(fileNames: List[String]) = {
-    println("Saving reference database...")
+    // println("Saving reference database...")
     copyFiles(fileNames, identity[String], backup)
   }
 
@@ -111,7 +111,7 @@ object Main {
   }
 
   def deleteDatabase(fileNames: List[String]) = {
-    println("Deleting old database...")
+    // println("Deleting old database...")
 
     fileNames.foreach((name) => {
       new File(name).delete()
