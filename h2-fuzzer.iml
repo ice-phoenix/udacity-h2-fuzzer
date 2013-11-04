@@ -19,12 +19,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.9.2" level="project" />
-    <orderEntry type="library" name="Maven: org.clapper:grizzled-slf4j_2.9.1:0.6.6" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.2" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.6.4" level="project" />
-    <orderEntry type="library" name="Maven: com.h2database:h2:1.3.167" level="project" />
+    <orderEntry type="library" name="Maven: org.clapper:grizzled-slf4j_2.9.2:0.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" level="project" />
+    <orderEntry type="library" name="Maven: com.h2database:h2:1.3.174" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-io:1.3.2" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:10.0.1" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:1.3.9" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:15.0" level="project" />
   </component>
 </module>
+
